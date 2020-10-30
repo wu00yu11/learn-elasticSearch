@@ -5,13 +5,16 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.springframework.stereotype.Component;
 
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author wu00y
  */
+@Component
 public class HtmlParseUtil {
     public static void main(String[] args) {
         try {
@@ -21,7 +24,7 @@ public class HtmlParseUtil {
         }
     }
 
-    public  ArrayList<Content> parseJD(String keyword, int timeoutMillis) throws Exception {
+    public List<Content> parseJD(String keyword, int timeoutMillis) throws Exception {
         //获取请求
         String url = "https://search.jd.com/Search?keyword="+keyword;
         //解析网页(浏览器document对象)
